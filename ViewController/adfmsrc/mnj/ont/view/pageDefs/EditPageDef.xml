@@ -1254,5 +1254,28 @@
         <Item Value="LastUpdateDate"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="BomBpoLinesAllVO1Iterator" id="BomBpoLinesAllVO11">
+      <nodeDefinition DefName="mnj.ont.model.views.BomBpoLinesAllVO"
+                      Name="BomBpoLinesAllVO110">
+        <AttrNames>
+          <Item Value="BomId"/>
+          <Item Value="BpoNo"/>
+          <Item Value="Category"/>
+          <Item Value="EndUserDesc"/>
+          <Item Value="Fit"/>
+          <Item Value="LineId"/>
+          <Item Value="OrderQty"/>
+          <Item Value="SaleOrderId"/>
+          <Item Value="UserItemDesc"/>
+          <Item Value="Brand"/>
+          <Item Value="StyleNo"/>
+          <Item Value="Season"/>
+          <Item Value="TotOrdQty"/>
+          <Item Value="TotalOrderQty"/>
+          <Item Value="BpoId"/>
+          
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

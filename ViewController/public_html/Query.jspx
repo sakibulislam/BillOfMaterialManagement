@@ -35,10 +35,10 @@
                                         disabled="#{sessionScope.userId==null? 'true':'false'}"
                                         id="cb1" action="goEdit"
                                         inlineStyle="height:30px;font-weight:bold;"
-                                        icon="/icons/add2.png"/>
+                                        icon="/icons/Icon_6-512.png"/>
                       <af:commandButton text="Open" id="cb3" action="goEdit"
                                         inlineStyle="height:30px;font-weight:bold;"
-                                        icon="/icons/edit.png"/>
+                                        icon="/icons/edit new.png"/>
                       <af:commandButton actionListener="#{bindings.Delete.execute}"
                                         text="Delete"
                                         disabled="#{!bindings.Delete.enabled}"

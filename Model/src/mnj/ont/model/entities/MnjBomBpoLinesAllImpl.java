@@ -148,6 +148,16 @@ public class MnjBomBpoLinesAllImpl extends EntityImpl {
             }
         }
         ,
+        BpoId {
+            public Object get(MnjBomBpoLinesAllImpl obj) {
+                return obj.getBpoId();
+            }
+
+            public void put(MnjBomBpoLinesAllImpl obj, Object value) {
+                obj.setBpoId((Number)value);
+            }
+        }
+        ,
         CustMnjOntBomHeader {
             public Object get(MnjBomBpoLinesAllImpl obj) {
                 return obj.getCustMnjOntBomHeader();
@@ -159,6 +169,7 @@ public class MnjBomBpoLinesAllImpl extends EntityImpl {
         }
         ;
         private static AttributesEnum[] vals = null;
+
         private static int firstIndex = 0;
 
         public abstract Object get(MnjBomBpoLinesAllImpl object);
@@ -198,6 +209,7 @@ public class MnjBomBpoLinesAllImpl extends EntityImpl {
     public static final int BRAND = AttributesEnum.Brand.index();
     public static final int STYLENO = AttributesEnum.StyleNo.index();
     public static final int SEASON = AttributesEnum.Season.index();
+    public static final int BPOID = AttributesEnum.BpoId.index();
     public static final int CUSTMNJONTBOMHEADER = AttributesEnum.CustMnjOntBomHeader.index();
 
     /**
@@ -409,6 +421,26 @@ public class MnjBomBpoLinesAllImpl extends EntityImpl {
     public void setSeason(String value) {
         setAttributeInternal(SEASON, value);
     }
+
+    /**
+     * Gets the attribute value for BpoId, using the alias name BpoId.
+     * @return the BpoId
+     */
+    public Number getBpoId() {
+        return (Number)getAttributeInternal(BPOID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for BpoId.
+     * @param value value to set the BpoId
+     */
+    public void setBpoId(Number value) {
+        setAttributeInternal(BPOID, value);
+    }
+
+
+
+   
 
     /**
      * getAttrInvokeAccessor: generated method. Do not modify.

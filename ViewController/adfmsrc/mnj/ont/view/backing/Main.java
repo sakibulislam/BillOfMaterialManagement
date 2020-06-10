@@ -2291,6 +2291,15 @@ Integer.parseInt(r.getAttribute("SizeQuantity").toString());
             e.printStackTrace();
         }
     }
+
+    public void callUpdateBPO(ActionEvent actionEvent) {
+        try {
+            System.out.println("Enter into callUpdateBPO.....");
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
 
 

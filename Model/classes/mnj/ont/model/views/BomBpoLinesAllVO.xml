@@ -92,8 +92,9 @@
        MnjBomBpoLinesAll.USER_ITEM_DESC, 
        MnjBomBpoLinesAll.BRAND, 
        MnjBomBpoLinesAll.STYLE_NO, 
-       MnjBomBpoLinesAll.SEASON
-    
+       MnjBomBpoLinesAll.SEASON,
+       MnjBomBpoLinesAll.BPO_ID
+       
 FROM MNJ_BOM_BPO_LINES_ALL MnjBomBpoLinesAll]]>
   </SQLQuery>
   <EntityUsage
@@ -210,6 +211,12 @@ FROM MNJ_BOM_BPO_LINES_ALL MnjBomBpoLinesAll]]>
     ColumnType="NUMBER"
     AliasName="VIEW_ATTR"
     SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="BpoId"
+    PrecisionRule="true"
+    EntityAttrName="BpoId"
+    EntityUsage="MnjBomBpoLinesAll"
+    AliasName="BPO_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="mnj.ont.model.ModelBundle"/>

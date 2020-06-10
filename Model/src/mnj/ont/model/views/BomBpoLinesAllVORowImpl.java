@@ -161,6 +161,16 @@ public class BomBpoLinesAllVORowImpl extends ViewRowImpl {
             }
         }
         ,
+        BpoId {
+            public Object get(BomBpoLinesAllVORowImpl obj) {
+                return obj.getBpoId();
+            }
+
+            public void put(BomBpoLinesAllVORowImpl obj, Object value) {
+                obj.setBpoId((Number)value);
+            }
+        }
+        ,
         BuyerCriteria1 {
             public Object get(BomBpoLinesAllVORowImpl obj) {
                 return obj.getBuyerCriteria1();
@@ -172,6 +182,8 @@ public class BomBpoLinesAllVORowImpl extends ViewRowImpl {
         }
         ;
         private static AttributesEnum[] vals = null;
+
+
         private static int firstIndex = 0;
 
         public abstract Object get(BomBpoLinesAllVORowImpl object);
@@ -213,6 +225,7 @@ public class BomBpoLinesAllVORowImpl extends ViewRowImpl {
     public static final int SEASON = AttributesEnum.Season.index();
     public static final int TOTORDQTY = AttributesEnum.TotOrdQty.index();
     public static final int TOTALORDERQTY = AttributesEnum.TotalOrderQty.index();
+    public static final int BPOID = AttributesEnum.BpoId.index();
     public static final int BUYERCRITERIA1 = AttributesEnum.BuyerCriteria1.index();
 
     /**
@@ -457,6 +470,26 @@ public class BomBpoLinesAllVORowImpl extends ViewRowImpl {
         setAttributeInternal(TOTALORDERQTY, value);
     }
 
+
+    /**
+     * Gets the attribute value for BPO_ID using the alias name BpoId.
+     * @return the BPO_ID
+     */
+    public Number getBpoId() {
+        return (Number) getAttributeInternal(BPOID);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for BPO_ID using the alias name BpoId.
+     * @param value value to set the BPO_ID
+     */
+    public void setBpoId(Number value) {
+        setAttributeInternal(BPOID, value);
+    }
+
+    
+
+   
 
     /**
      * Gets the attribute value for the calculated attribute Category.

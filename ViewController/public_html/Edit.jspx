@@ -55,7 +55,7 @@
                   <af:commandButton actionListener="#{backing_bean.saveAll}"
                                     text="Save" id="cb5"
                                     inlineStyle="height:30px;font-weight:bold;"
-                                    icon="/icons/save.png"/>        
+                                    icon="/icons/save new.png"/>        
                   <af:spacer width="10" height="10" id="spacer1"/>
                   <af:commandButton actionListener="#{bindings.Rollback.execute}"
                                     text="Back" immediate="true" id="cb6"
@@ -308,8 +308,9 @@
             </af:inputText>
           </af:panelFormLayout>
           <af:panelTabbed id="pt1" styleClass="AFStretchWidth"
-                          inlineStyle="height:435px;">
-            <af:showDetailItem text="Assign BPOs" id="sdi2">
+                          inlineStyle="height:700px;">
+            <af:showDetailItem text="Assign BPOs" id="sdi2"
+                               inflexibleHeight="100">
               <af:panelCollection id="pc4" styleClass="AFStretchWidth"
                                   inlineStyle="height:320px;">
                 <f:facet name="menus"/>
@@ -325,6 +326,10 @@
                                       disabled="#{!bindings.Delete2.enabled}"
                                       id="cb19"
                                       inlineStyle="font-weight:bold;"/>
+                    <af:commandButton text="Update BPO" id="cb38"
+                                      inlineStyle="font-weight:bold;"
+                                      actionListener="#{backing_bean.callUpdateBPO}"
+                                      partialSubmit="true"/>
                     <af:commandButton text="Fill BPO" id="cb29"
                                       inlineStyle="font-weight:bold;">
                       <af:showPopupBehavior popupId="::p6"/>
@@ -355,7 +360,7 @@
                           editingMode="clickToEdit"
                           binding="#{backing_bean.assignBpo_BindTB}"
                           columnSelection="multiple"
-                          styleClass="AFStretchWidth" autoHeightRows="-1">
+                          styleClass="AFStretchWidth" autoHeightRows="-1" rendered="false">
                   <af:column id="c98" headerText="SrNo" align="center"
                              sortable="true">
                     <af:outputText value="#{vs.index+1}" id="ot12"/>
@@ -491,6 +496,130 @@
                     </af:inputText>
                   </af:column>
                   <f:facet name="detailStamp"/>
+                </af:table>
+                <af:table value="#{bindings.BomBpoLinesAllVO11.collectionModel}"
+                          var="row"
+                          rows="#{bindings.BomBpoLinesAllVO11.rangeSize}"
+                          emptyText="#{bindings.BomBpoLinesAllVO11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          fetchSize="#{bindings.BomBpoLinesAllVO11.rangeSize}"
+                          rowBandingInterval="0"
+                          filterModel="#{bindings.BomBpoLinesAllVO1Query.queryDescriptor}"
+                          queryListener="#{bindings.BomBpoLinesAllVO1Query.processQuery}"
+                          filterVisible="true" varStatus="vs"
+                          selectedRowKeys="#{bindings.BomBpoLinesAllVO11.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.BomBpoLinesAllVO11.collectionModel.makeCurrent}"
+                          rowSelection="single" id="t31"
+                          partialTriggers="::cb18 ::cb19 ::cb38">
+                  <af:column sortProperty="BomId" filterable="true"
+                             sortable="true"
+                             headerText="#{bindings.BomBpoLinesAllVO11.hints.BomId.label}"
+                             id="c164" visible="false">
+                    <af:outputText value="#{row.BomId}" id="ot51">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.BomBpoLinesAllVO11.hints.BomId.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column id="c170" headerText="Sr." align="center"
+                             width="35">
+                    <af:outputText value="#{vs.index+1}" id="ot64"/>
+                  </af:column>
+                  <af:column headerText="#{bindings.BomBpoLinesAllVO11.hints.BpoId.label}"
+                             id="c171">
+                    <af:outputText value="#{row.BpoId}" id="ot65">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.BomBpoLinesAllVO11.hints.BpoId.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="BpoNo" filterable="true"
+                             sortable="true"
+                             headerText="#{bindings.BomBpoLinesAllVO11.hints.BpoNo.label}"
+                             id="c168">
+                    <af:outputText value="#{row.BpoNo}" id="ot53"/>
+                  </af:column>
+                  <af:column sortProperty="Category" filterable="true"
+                             sortable="true"
+                             headerText="#{bindings.BomBpoLinesAllVO11.hints.Category.label}"
+                             id="c152">
+                    <af:outputText value="#{row.Category}" id="ot57"/>
+                  </af:column>
+                  <af:column sortProperty="OrderQty" filterable="true"
+                             sortable="true"
+                             headerText="#{bindings.BomBpoLinesAllVO11.hints.OrderQty.label}"
+                             id="c158">
+                    <af:outputText value="#{row.OrderQty}" id="ot50">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.BomBpoLinesAllVO11.hints.OrderQty.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="EndUserDesc" filterable="true"
+                             sortable="true"
+                             headerText="#{bindings.BomBpoLinesAllVO11.hints.EndUserDesc.label}"
+                             id="c153">
+                    <af:outputText value="#{row.EndUserDesc}" id="ot55"/>
+                  </af:column>
+                  <af:column sortProperty="Fit" filterable="true"
+                             sortable="true"
+                             headerText="#{bindings.BomBpoLinesAllVO11.hints.Fit.label}"
+                             id="c151">
+                    <af:outputText value="#{row.Fit}" id="ot63"/>
+                  </af:column>
+                  <af:column sortProperty="LineId" filterable="true"
+                             sortable="true"
+                             headerText="#{bindings.BomBpoLinesAllVO11.hints.LineId.label}"
+                             id="c166" visible="false">
+                    <af:outputText value="#{row.LineId}" id="ot54">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.BomBpoLinesAllVO11.hints.LineId.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="SaleOrderId" filterable="true"
+                             sortable="true"
+                             headerText="#{bindings.BomBpoLinesAllVO11.hints.SaleOrderId.label}"
+                             id="c155" visible="false">
+                    <af:outputText value="#{row.SaleOrderId}" id="ot52">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.BomBpoLinesAllVO11.hints.SaleOrderId.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="UserItemDesc" filterable="true"
+                             sortable="true"
+                             headerText="#{bindings.BomBpoLinesAllVO11.hints.UserItemDesc.label}"
+                             id="c160">
+                    <af:outputText value="#{row.UserItemDesc}" id="ot56"/>
+                  </af:column>
+                  <af:column sortProperty="Brand" filterable="true"
+                             sortable="true"
+                             headerText="#{bindings.BomBpoLinesAllVO11.hints.Brand.label}"
+                             id="c169">
+                    <af:outputText value="#{row.Brand}" id="ot62"/>
+                  </af:column>
+                  <af:column sortProperty="StyleNo" filterable="true"
+                             sortable="true"
+                             headerText="#{bindings.BomBpoLinesAllVO11.hints.StyleNo.label}"
+                             id="c156" visible="false">
+                    <af:outputText value="#{row.StyleNo}" id="ot60"/>
+                  </af:column>
+                  <af:column sortProperty="Season" filterable="true"
+                             sortable="true"
+                             headerText="#{bindings.BomBpoLinesAllVO11.hints.Season.label}"
+                             id="c161" visible="false">
+                    <af:outputText value="#{row.Season}" id="ot58"/>
+                  </af:column>
+                  <af:column sortProperty="TotOrdQty" filterable="true"
+                             sortable="true"
+                             headerText="#{bindings.BomBpoLinesAllVO11.hints.TotOrdQty.label}"
+                             id="c157" visible="false">
+                    <af:outputText value="#{row.TotOrdQty}" id="ot61">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.BomBpoLinesAllVO11.hints.TotOrdQty.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="TotalOrderQty" filterable="true"
+                             sortable="true"
+                             headerText="#{bindings.BomBpoLinesAllVO11.hints.TotalOrderQty.label}"
+                             id="c162" visible="false">
+                    <af:outputText value="#{row.TotalOrderQty}" id="ot59"/>
+                  </af:column>
                 </af:table>
               </af:panelCollection>
             </af:showDetailItem>

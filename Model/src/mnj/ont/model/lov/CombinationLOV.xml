@@ -22,12 +22,12 @@
     </SchemaBasedProperties>
   </Properties>
   <SQLQuery>
-    <![CDATA[SELECT distinct
+    <![CDATA[/* Formatted on 6/3/2020 5:24:29 PM (QP5 v5.256.13226.35510) */
+SELECT DISTINCT
        si.poc_id,
        si.system_id,
-       (ac.CUSTOMER_NAME||'/'||
-       si.SEASON||'/'||nvl(si.STYLE,'NULL')
-) Combined_Attribute,
+       (ac.CUSTOMER_NAME || '/' || si.SEASON || '/' || NVL (si.STYLE, 'NULL'))
+          Combined_Attribute,
        si.BUYER_ID,
        ac.CUSTOMER_NAME buyer,
        si.SEASON,
@@ -35,7 +35,11 @@
        si.brand,
        SI.ORG_ID
   FROM xx_mnj_style_info_v si, ar_customers ac
- WHERE si.BUYER_ID = ac.CUSTOMER_ID]]>
+ WHERE     si.BUYER_ID = ac.CUSTOMER_ID
+       AND NOT EXISTS
+              (SELECT *
+                 FROM CUST_MNJ_ONT_BOM cmob
+                WHERE cmob.poc_id = si.poc_id)]]>
   </SQLQuery>
   <ViewAttribute
     Name="PocId"

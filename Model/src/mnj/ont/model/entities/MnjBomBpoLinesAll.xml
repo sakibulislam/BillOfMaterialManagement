@@ -159,6 +159,17 @@
       <Attr Name="_DisplaySize" Value="200"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="BpoId"
+    ColumnName="BPO_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MNJ_BOM_BPO_LINES_ALL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="CustMnjOntBomHeader"
     Association="mnj.ont.model.entities.MnjBomBpoLinesAllFkAssoc"
