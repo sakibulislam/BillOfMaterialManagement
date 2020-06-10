@@ -28,7 +28,7 @@
                   <af:commandButton text="Attachments" id="cb35"
                                     inlineStyle="height:30px; font-weight:bold;"
                                     action="#{pageFlowScope.TestPageFlowBean.callAttachment}"
-                                    icon="/icons/add2.png"/>
+                                    icon="/icons/attach-xxl.png"/>
                   <af:spacer width="10" height="10" id="spacer3"/>
                   <af:commandButton text="Post" id="cb13"
                                     action="#{backing_bean.generateversion}"
@@ -36,7 +36,7 @@
                   <af:spacer width="10" height="10" id="spacer4"/>
                   <af:commandButton text="Generate Requisition" id="cb2"
                                     inlineStyle="height:30px;font-weight:bold;"
-                                    icon="/icons/edit.png">
+                                    icon="/icons/update 10.png">
                     <af:showPopupBehavior popupId="p3" alignId="f1"/>
                   </af:commandButton>
                   <af:spacer width="10" height="10" id="spacer5"/>
@@ -50,7 +50,7 @@
                   <af:commandButton text="Copy" id="cb4"
                                     action="#{backing_bean.copyBOM}"
                                     inlineStyle="height:30px;font-weight:bold;"
-                                    icon="/icons/popup1.png"/>
+                                    icon="/icons/copy-2.png"/>
                   <af:spacer width="30" height="10" id="spacer2"/>
                   <af:commandButton actionListener="#{backing_bean.saveAll}"
                                     text="Save" id="cb5"
@@ -61,7 +61,7 @@
                                     text="Back" immediate="true" id="cb6"
                                     action="goBrowse"
                                     inlineStyle="font-weight:bold;height:30px;"
-                                    icon="/icons/back.png">
+                                    icon="/icons/go back.jpg">
                     <af:resetActionListener/>
                   </af:commandButton>
                 </af:panelGroupLayout>

@@ -20,7 +20,7 @@
               <af:toolbar id="t2">
                 <af:commandButton text="Back" id="cb1" action="backToEdit"
                                   inlineStyle="font-weight:bold;height:30px;"
-                                  icon="/icons/back.png"/>
+                                  icon="/icons/go back.jpg"/>
               </af:toolbar>
             </f:facet>
             <f:facet name="statusbar"/>

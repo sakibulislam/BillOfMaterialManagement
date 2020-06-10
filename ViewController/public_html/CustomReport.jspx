@@ -17,14 +17,14 @@
               <af:toolbar id="t3">
                 <af:commandButton text="Generate Excel Report" id="cb1"
                                   inlineStyle="font-size:13px; font-weight:bold; height:30px;"
-                                  icon="/icons/form.png">
+                                  icon="/icons/excel (1).png">
                   <af:fileDownloadActionListener contentType="application/excel"
                                                  filename="BOMCustomReport.xls"
                                                  method="#{backingBeanScope.CustomReport.generateReport}"/>
                 </af:commandButton>
                 <af:commandButton text="Back to BOM" id="cb2"
                                   inlineStyle="font-weight:bold; height:30px;"
-                                  icon="/icons/back.png" action="query"/>
+                                  icon="/icons/go back.jpg" action="query"/>
               </af:toolbar>
             </f:facet>
             <f:facet name="statusbar"/>

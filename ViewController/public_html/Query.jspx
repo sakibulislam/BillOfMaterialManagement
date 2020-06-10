@@ -44,13 +44,14 @@
                                         disabled="#{!bindings.Delete.enabled}"
                                         id="cb2"
                                         inlineStyle="height:30px;font-weight:bold;"
-                                        icon="/icons/delete.png"/>
+                                        icon="/icons/delete (2).png"/>
                       <af:commandButton actionListener="#{bindings.Rollback.execute}"
                                         text="Undo"
                                         disabled="#{!bindings.Rollback.enabled}"
                                         immediate="true" id="cb5"
                                         inlineStyle="height:30px;font-weight:bold;"
-                                        icon="/icons/cancel2.png">
+                                        icon="/icons/cancel2.png"
+                                        visible="false">
                         <af:resetActionListener/>
                       </af:commandButton>
                       <af:commandButton actionListener="#{bindings.Commit.execute}"
@@ -58,11 +59,11 @@
                                         disabled="#{!bindings.Commit.enabled}"
                                         id="cb4"
                                         inlineStyle="height:30px;font-weight:bold;"
-                                        icon="/icons/save.png"/>
+                                        icon="/icons/save new.png"/>
                       <af:commandButton text="Custom Report" id="cb7"
                                         inlineStyle="height:30px;font-weight:bold;"
                                         action="customReport"
-                                        icon="/icons/form.png"/>
+                                        icon="/icons/excel (1).png"/>
                     </af:toolbar>
                   </f:facet>
                   <f:facet name="statusbar"/>
